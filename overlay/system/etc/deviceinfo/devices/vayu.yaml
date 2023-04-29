@@ -1,0 +1,12 @@
+vayu:
+  Vendor: Xiaomi
+  PrettyName: Xiaomi Poco X3 Pro
+  DeviceType: phone
+  GridUnit: 21
+  PrimaryOrientation: Portrait
+  SupportedOrientations:
+    - Portrait
+    - InvertedPortrait
+    - Landscape
+    - InvertedLandscape
+  MirAndroidPlatformServerEglSync: False
