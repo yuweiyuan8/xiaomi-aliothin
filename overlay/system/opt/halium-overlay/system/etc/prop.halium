@@ -1,1 +1,5 @@
 debug.stagefright.ccodec=0
+
+# Wifi display
+ubuntu.widi.supported=1
+wifi.interface=wlan0
