@@ -3,4 +3,4 @@ variables:
   BUILD_DEVEL_FLASHABLE_FOCAL: 1
 
 include:
-  - https://gitlab.com/ubports/porting/community-ports/halium-generic-adaptation-build-tools/-/raw/halium-11/gsi-port-ci.yml
+  - http://localhost/root/halium-generic-adaptation-build-tools/-/raw/halium-11/gsi-port-ci.yml
