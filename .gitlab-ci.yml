@@ -13,7 +13,7 @@ build:
     paths:
       - out/*
 
-devel-flashable:
+devel-flashable-focal:
   stage: deploy
   variables:
     ROOTFS_URL: "https://ci.ubports.com/job/focal-hybris-rootfs-arm64/job/master/lastSuccessfulBuild/artifact/ubuntu-touch-android9plus-rootfs-arm64.tar.gz"
