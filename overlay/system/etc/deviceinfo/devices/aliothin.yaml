@@ -1,0 +1,15 @@
+aliothin:
+  Vendor: Xiaomi
+  PrettyName: Mi 11x
+  DeviceType: phone
+  GridUnit: 21
+  PrimaryOrientation: Portrait
+  SupportedOrientations:
+    - Portrait
+    - InvertedPortrait
+    - Landscape
+    - InvertedLandscape
+  FlashlightSysfsPath:
+    - /sys/class/leds/led:torch_0/brightness
+  FlashlightSwitchPath:
+    - /sys/class/leds/led:switch_0/brightness
