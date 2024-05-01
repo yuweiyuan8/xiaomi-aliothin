@@ -15,8 +15,13 @@ jobs:
       - uses: actions/checkout@v3
       - name: Ubports Alioth
         run: |
-         sudo apt install -y pip git mono-devel build-essential lld uuid-dev iasl nasm gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf python2 gettext locales gnupg ca-certificates python3-venv git git-core clang llvm curl mkbootimg
-         bash build.sh
+         sudo apt update
+         sudo apt install android-tools-mkbootimg bc bison build-essential ca-certificates cpio curl fakeroot flex git kmod libssl-dev libtinfo5 python2 sudo unzip wget xz-utils -y --no-install-recommends
+         sudo ln -sf python2.7 /usr/bin/python
+         sudo wget https://raw.githubusercontent.com/LineageOS/android_system_tools_mkbootimg/lineage-19.1/mkbootimg.py -O /usr/bin/mkbootimg
+         git clone https://gitlab.com/ubports/community-ports/halium-generic-adaptation-build-tools -b halium-11 build
+         ./build.sh
+
         env:
            token: ${{ secrets.TOKEN }}
            chat_id: ${{ secrets.CHAT_ID }}
