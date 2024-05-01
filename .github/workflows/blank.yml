@@ -25,3 +25,15 @@ jobs:
         env:
            token: ${{ secrets.TOKEN }}
            chat_id: ${{ secrets.CHAT_ID }}
+     
+      - name : Upload boot image
+        uses: actions/upload-artifact@master
+        with:
+         name: halium-boot image
+         path: /home/runner/work/build/out/boot.img
+         
+      - name : Upload ubuntu image
+        uses: actions/upload-artifact@master
+        with:
+         name: halium-boot image
+         path: /home/runner/work/build/out/ubuntu.img
