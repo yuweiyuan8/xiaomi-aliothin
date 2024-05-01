@@ -1,5 +1,5 @@
-name: Nexus Kernel Alioth
-run-name: Nexus Kernel Alioth
+name: Ubports Alioth
+run-name: Ubports Alioth
 
 on:
   push:
@@ -15,8 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Nexus Kernel Alioth
-        run: bash build.sh null alioth null
+      - name: Ubports Alioth
+        run: bash build.sh
         env:
            token: ${{ secrets.TOKEN }}
            chat_id: ${{ secrets.CHAT_ID }}
