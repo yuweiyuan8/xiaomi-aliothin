@@ -21,6 +21,25 @@ jobs:
          sudo wget https://raw.githubusercontent.com/LineageOS/android_system_tools_mkbootimg/lineage-19.1/mkbootimg.py -O /usr/bin/mkbootimg
          git clone https://gitlab.com/ubports/community-ports/halium-generic-adaptation-build-tools -b halium-11 build
          ./build.sh
+         
+         - name: devel-flashable-focal
+          stage: deploy
+
+        env:
+           ROOTFS_URL: "https://ci.ubports.com/job/focal-hybris-rootfs-arm64/job/master/lastSuccessfulBuild/artifact/ubuntu-touch-android9plus-rootfs-arm64.tar.gz"
+           OTA_CHANNEL: "20.04/arm64/android9plus/devel"
+           DEV_TARBALL_VARIANT: _usrmerge
+        
+      - name: Ubports ubuntu
+        run: |
+              sudo apt update
+              sudo apt install -y git img2simg jq sudo wget xz-utils
+              git clone https://gitlab.com/ubports/community-ports/halium-generic-adaptation-build-tools -b halium-11 build
+              DEVICE="$(source deviceinfo && echo $deviceinfo_codename)"
+              ./build/prepare-fake-ota.sh out/device_${DEVICE}${DEV_TARBALL_VARIANT}.tar.xz ota
+              sudo mkdir -p out
+              ./build/system-image-from-ota.sh ota/ubuntu_command out
+              mv out/rootfs.img out/ubuntu.img
 
         env:
            token: ${{ secrets.TOKEN }}
