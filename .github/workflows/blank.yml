@@ -41,10 +41,6 @@ jobs:
               ./build/system-image-from-ota.sh ota/ubuntu_command out
               mv out/rootfs.img out/ubuntu.img
 
-        env:
-           token: ${{ secrets.TOKEN }}
-           chat_id: ${{ secrets.CHAT_ID }}
-     
       - name : Upload boot image
         uses: actions/upload-artifact@master
         with:
