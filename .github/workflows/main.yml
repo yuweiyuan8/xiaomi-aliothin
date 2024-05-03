@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        device: [alioth]
+        device: [lmi]
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -40,7 +40,7 @@ jobs:
 
     strategy:
       matrix:
-        device: [alioth]
+        device: [lmi]
         release: [focal]
 
     env:
@@ -96,7 +96,7 @@ jobs:
 
       strategy:
         matrix:
-          device: [alioth]
+          device: [lmi]
           release: [focal]
 
       steps:
