@@ -29,7 +29,7 @@ jobs:
           ./build.sh
         
       - name: Upload build output
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: device-tarball
           path: out/*
@@ -53,10 +53,10 @@ jobs:
       DEV_TARBALL_VARIANT: ${{ matrix.release == 'focal' && '_usrmerge' || '' }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Download device tarball
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: device-tarball
           path: out
@@ -83,7 +83,7 @@ jobs:
 
       - name: Upload flashable images
         continue-on-error: true
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: images-${{ matrix.device }}-${{ matrix.release }}
           path: |
@@ -100,7 +100,7 @@ jobs:
           release: [focal]
 
       steps:
-        - uses: actions/download-artifact@v3
+        - uses: actions/download-artifact@v4
           with:
             name: images-${{ matrix.device }}-${{ matrix.release }}
             path: out
